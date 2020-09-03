@@ -1,0 +1,19 @@
+{% extends 'pattern.html' %}
+
+{% block title %}Statistics Request Counter Page{% endblock %}
+
+{% block content %}
+    <h2>Statistics Request Counter Page</h2>
+    <table>
+        <tr>
+            <th>Method Name</th>
+            <th>Request Count</th>
+    {% for key, value in methods_dict.items() %}
+        <tr>
+            <td>{{ key }}</td>
+            <td>{{ value }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+    <p><a href="/">Go to Home Page</a></p>
+{% endblock %}
