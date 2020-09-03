@@ -1,0 +1,24 @@
+{% extends 'pattern.html' %}
+
+{% block title %}Home Page{% endblock %}
+
+{% block content %}
+    <h2>Home Page Request Counter</h2>
+    <p><a href="/request-counter">Add GET request</a> <span style="color:blue">{% if count_get > 0 %}- you have sent
+        {{ count_get }} request(s){% endif %}</span></p>
+    <br>
+    <form action="/request-counter" method="post">
+        <label for="sub_button">Add POST request</label> <span style="color:blue">{% if count_post > 0 %}- you have sent
+        {{ count_post }} request(s){% endif %}</span><br>
+        <input type="submit" value="Submit" name="sub_button">
+    </form><br>
+    <p><a href="/put">Add PUT request</a> <span style="color:blue">{% if count_put > 0 %}- you have sent {{ count_put }}
+        request(s){% endif %}</span></p>
+    <br>
+    <p><a href="/delete">Add DELETE request</a> <span
+            style="color:blue">{% if count_delete > 0 %}- you have sent {{ count_delete }} request(s){% endif %}</span>
+    </p><br>
+    <p><a href="/statistics">Go to Request Counter statistics</a></p>
+    <br>
+    <p><a href="/reset_data">RESET REQUEST COUNTER STATISTICS</a></p>
+{% endblock %}
